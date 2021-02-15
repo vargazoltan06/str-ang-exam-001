@@ -10,6 +10,7 @@ import { HeroService } from 'src/app/service/hero.service';
 })
 export class HeroesComponent implements OnInit {
 
+  columnKey: string = '';
   heroesList$: BehaviorSubject<Hero[]> = this.heroService.list$;
 
   phrase: string = '';
@@ -21,4 +22,7 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelect(key: string): void {
+    this.columnKey = key
+  }
 }
